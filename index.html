@@ -1,52 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Natal!</title>
-</head>
-<style>
-    *{
-        text-align: center;
-        margin-top: 7%;
-        background-color: rgba(224, 195, 159, 0.849);
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+IN+Guides&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      text-align: center;
+      margin-top: 7%;
+      background-color: rgba(224, 195, 159, 0.849);
+      font-family: "Dancing Script", serif;
     }
-    h3{
-        color: red;
+    h3 {
+      color: red;
     }
-    h1{
-        color: green;
-        box-shadow: 2px 3px red;
+    h1 {
+      color: green;
+      box-shadow: 2px 3px red;
     }
-</style>
-<script>
-    window.addEventListener('load', () => {
-  const audio = document.querySelector('audio');
-  audio.play().catch(error => {
-    console.log('Autoplay bloqueado: ', error);
-  });
-});
-</script>
-<body>
-    <div>
-        <h1>HO, HO, HO !</h1><br>
-        <H3>
-            É meu amor, mais um Natal juntos, e que venham muitos e muitos mais.
-            Agradeço a você por tornar essa data mais feliz na minha vida,
-            Desejo a você todo amor do mundo, e que nos juntos possamos alcançar todos os nossos objetivos,
-            e que Deus esteja presente todos os dias da nossa vida, e continue nos abencoando.
-            Espero que goste dos seus presentes, pois foram comprados de coração.
-            Te amo muito e sou muito grato a Deus pela mulher que esta se tornando.<br>
-            Neste Natal, quero lembrar o quanto você é especial para mim. Sua presença ilumina minha vida como as luzes brilham na árvore. Cada sorriso seu é um presente, cada gesto de carinho é uma bênção.
-            Sou grato por tudo o que vivemos juntos, pelas nossas conquistas e até pelos desafios, porque ao seu lado tudo fica mais leve e cheio de amor.
-            Que este Natal seja tão lindo quanto o seu coração, e que cada momento seja repleto de alegria, paz e amor. Você é, e sempre será, o maior presente que Deus me deu.
-            Te amo hoje e para sempre. Feliz Natal, meu amor!
-
-        </H3><br>
-        <h1>Feliz Natal!!!!</h1><br>
-        <audio controls autoplay loop>
-            <source src="./audio/happy-new-year.mp3" type="audio/x-mp3">
-        </audio>
+    .oculto {
+      display: none;
+    }
+    .btn-wrap {
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-wrap button {
+      position: absolute;
+      z-index: 1;
+      width: 60vw;
+      height: 80px;
+      padding: 0;
+      border-radius: 7px;
+      margin-top: 50vh;
+      color: aliceblue;
+      background-color: red;
+      font-family: "Barlow Condensed", serif;
+      font-size: large;
+    }
+  </style>
+  <body>
+    <div class="btn-wrap">
+      <section class="oculto">
+        <h1>HO, HO, HO !</h1>
+        <br />
+        <h3>
+          É meu amor, mais um Natal juntos, e que venham muitos e muitos mais.
+          Agradeço a você por tornar essa data mais feliz na minha vida, Desejo
+          a você todo amor do mundo, e que nos juntos possamos alcançar todos os
+          nossos objetivos, e que Deus esteja presente todos os dias da nossa
+          vida, e continue nos abencoando. Espero que goste dos seus presentes,
+          pois foram comprados de coração. Te amo muito e sou muito grato a Deus
+          pela mulher que esta se tornando.<br />
+          Neste Natal, quero lembrar o quanto você é especial para mim. Sua
+          presença ilumina minha vida como as luzes brilham na árvore. Cada
+          sorriso seu é um presente, cada gesto de carinho é uma bênção. Sou
+          grato por tudo o que vivemos juntos, pelas nossas conquistas e até
+          pelos desafios, porque ao seu lado tudo fica mais leve e cheio de
+          amor. Que este Natal seja tão lindo quanto o seu coração, e que cada
+          momento seja repleto de alegria, paz e amor. Você é, e sempre será, o
+          maior presente que Deus me deu. Te amo hoje e para sempre. Feliz
+          Natal, meu amor!
+        </h3>
+        <br />
+        <h1>Feliz Natal!!!!</h1>
+        <br />
+        <p>OBS: Seu presente esta no guarda roupas do VI!</p>
+      </section>
+      <audio loop>
+        <source src="./audio/happy-new-year.mp3" type="audio/x-mp3" />
+      </audio>
+      <button onclick="play()">CLIQUE AQUI PARA LER SUA MENSAGEM</button>
     </div>
-</body>
+  </body>
+  <script>
+    function play() {
+      const modal = document.querySelector("section");
+      modal.classList.remove("oculto");
+      const audio = document.querySelector("audio");
+      audio.play();
+      const botao = document.querySelector("button");
+      botao.classList.add("oculto");
+    }
+  </script>
 </html>
